@@ -78,11 +78,8 @@ bool ScalarConverter::convert(std::string av)
 	
 	if (str.length() == 0)
 		return 0;
-	if (str.length() == 1 && !isdigit(str[0]))
-	{
-		convertChar(str);
-		return 1;
-	}
+	if (str.length() == 1 && !isdigit(str[0])
+		return 0 + convertChar(str);
 	for (size_t i = 0; i < str.length(); i++)
 	{
 		if (i == 0 && (str[i] == '-' || str[i] == '+'))
@@ -127,5 +124,6 @@ bool ScalarConverter::convert(std::string av)
 		std::cout << "double: " << f << std::endl;
 		return 1;
 	}
-	return 0;
+	std::cerr << "error!" << std:endl;
+	return 1;
 }
